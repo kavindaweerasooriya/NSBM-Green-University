@@ -1,9 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
 
-
-
-module.exports = (Conn)=>{
+module.exports = (sequelizeconn)=>{
     return Conn.define("User",{
         UserID:{
             type: DataTypes.STRING,

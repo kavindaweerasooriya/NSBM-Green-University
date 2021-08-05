@@ -26,11 +26,8 @@ app.use(session({
 }))
 
 
-//Home
-app.get("/",require("./middleware/isauth"),(req,res)=>{
-    res.render("index")
-})
 
+app.use(require("./routes/home.routes"))
 app.use(require("./routes/user.routes"))
 app.use(require("./routes/comment.routes"))
 app.use(require("./routes/post.routes"))

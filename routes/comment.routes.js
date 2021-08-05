@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Comment = require("../controllers/comment.controller")
+const commentctrl = require("../controllers/comment.controller")
 
-router.post("/post/new",Comment.createComment)
+router.post("/comment/new/:id",commentctrl.createComment)
+
+
+//views
 
 
 module.exports = router;

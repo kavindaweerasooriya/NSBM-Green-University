@@ -26,6 +26,7 @@ app.use(session({
 }))
 
 
+//Home
 app.get("/",require("./middleware/isauth"),(req,res)=>{
     res.render("index")
 })

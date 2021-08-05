@@ -11,13 +11,14 @@ exports.login = async (req, res)=>{
     if(!email && !password){
         return res.redirect("/user/login")
     }
-    
+
     const user  = await User.findOne({where : {email:email}})
     if(!user){
         return res.redirect("/user/register");
     }
     if (await argon2.verify(user.Password, password)){
         req.session.isAuth = true;
+        req.session.user = user;
         return res.redirect("/")
     }
 
@@ -29,12 +30,12 @@ exports.register =  async (req,res,next)=>{
     req.body.UserID = uuidv4(); 
     try {
         const result = await User.create(req.body);
+        res.redirect("/user/login")
         console.log(result);
     } catch (error) {
         console.log(result);
     }
-    req.session.isAuth = true;
-    res.redirect("/")
+  
 }
 
 

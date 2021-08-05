@@ -8,9 +8,22 @@ const { v4: uuidv4 } = require('uuid');
 exports.login = async (req, res)=>{
     const email = req.body.email;
     const password = req.body.password;
-    console.log(email);
-    console.log(password);
+    if(!email && !password){
+        return res.redirect("/user/login")
+    }
+    
+    const user  = await User.findOne({where : {email:email}})
+    if(!user){
+        return res.redirect("/user/register");
+    }
+    if (await argon2.verify(user.Password, password)){
+        req.session.isAuth = true;
+        return res.redirect("/")
+    }
+
+    return res.redirect("/user/login")
 }
+
 
 exports.register =  async (req,res,next)=>{
     req.body.UserID = uuidv4(); 
@@ -20,7 +33,6 @@ exports.register =  async (req,res,next)=>{
     } catch (error) {
         console.log(result);
     }
-    console.log("saving session")
     req.session.isAuth = true;
     res.redirect("/")
 }

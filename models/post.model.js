@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 
 module.exports = (sequelizeconn)=>{
-    return Conn.define("Post",{
+    return sequelizeconn.define("Post",{
         PostId:{
             type: DataTypes.STRING,
             primaryKey:true

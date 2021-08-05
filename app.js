@@ -16,6 +16,8 @@ app.use(cookiesession({
 }))
 
 
+app.use(require("./routes/user.routes"))
+
 
 
 

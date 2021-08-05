@@ -18,7 +18,7 @@ app.use(express.urlencoded({
  
 app.use(session({
     secret: "secret!",
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     cookie: {
         maxAge: 24 * 60 * 60 * 1000

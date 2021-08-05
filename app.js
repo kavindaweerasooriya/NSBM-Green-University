@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cookiesession = require("cookie-session");
+const { request } = require('express');
 
 
 app.use(express.json());
@@ -20,6 +21,9 @@ app.use(cookiesession({
 
 
 app.use(require("./routes/user.routes"))
+app.use(require("./routes/comment.routes"))
+app.use(require("./routes/post.routes"))
+
 
 
 

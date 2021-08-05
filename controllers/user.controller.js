@@ -6,7 +6,7 @@ exports.login = async (req, res)=>{
     const password = req.body.password;
 }
 
-exports.register = (req,res)=>{
+exports.register =  async (req,res)=>{
     const result = await User.create(req.body);
  
 

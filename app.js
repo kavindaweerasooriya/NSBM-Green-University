@@ -1,17 +1,17 @@
 const express = require('express');
 const app = express();
 const cookiesession = require("cookie-session");
-const { request } = require('express');
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+app.use(express.static(__dirname + './views'));
 
 
 app.use(express.json());
 
-app.get('/health',(req,res)=>{
-    res.send({
-        "message":"healthy"
-    })
+app.get("/",(req,res)=>{
+    res.render("index")
 })
-
  
 app.use(cookiesession({
     name:"session",

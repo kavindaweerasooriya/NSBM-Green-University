@@ -1,5 +1,9 @@
 const argon2 = require("argon2");
 
-module.exports = (req,res , next)=>{
-    
+module.exports = async (req,res , next)=>{
+   
+    const password = req.body.Password;
+    const passwordhash = await argon2.hash(password);
+    req.body.Password = passwordhash;  
+    next();
 }

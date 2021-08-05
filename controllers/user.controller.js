@@ -12,17 +12,24 @@ exports.login = async (req, res)=>{
     console.log(password);
 }
 
-exports.register =  async (req,res)=>{
+exports.register =  async (req,res,next)=>{
     req.body.UserID = uuidv4(); 
-    const result = await User.create(req.body);
-    console.log(result);
- 
-
+    try {
+        const result = await User.create(req.body);
+        console.log(result);
+    } catch (error) {
+        console.log(result);
+    }
+    console.log("saving session")
+    req.session.isAuth = true;
+    res.redirect("/")
 }
 
 
 
 
+
+//views
 exports.getLogin = (req, res)=>{
     res.render("login");
 }

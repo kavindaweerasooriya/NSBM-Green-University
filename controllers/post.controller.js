@@ -17,8 +17,16 @@ module.exports.createpost = async (req,res)=>{
 
 
 
+
 //views
 
 module.exports.getCreatePost = (req, res)=>{
     res.render("create-post")
+}
+
+module.exports.readOnePost = async (req, res)=>{
+    console.log(req.params);
+    const postId = req.params.postID;
+    const post = await Post.findOne({where : {PostId : postId}})
+    res.render("read-post",{"post":post});
 }

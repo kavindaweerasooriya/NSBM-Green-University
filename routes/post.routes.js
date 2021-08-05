@@ -8,6 +8,7 @@ router.post("/post/new",require("../middleware/isauth"),post.createpost)
 //views
 
 router.get("/post/new",require("../middleware/isauth"),post.getCreatePost)
+router.get("/post/read/:postID",require("../middleware/isauth"),post.readOnePost)
 
 
 module.exports = router;

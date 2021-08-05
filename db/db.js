@@ -32,4 +32,8 @@ db.User = require("../models/user.model")(sequelizeconnection);
 db.Post = require('../models/post.model')(sequelizeconnection);
 db.Comment = require("../models/comment.model")(sequelizeconnection);
 
+//one to many
+db.User.hasMany(db.Post,{ onDelete: 'cascade' });
+db.Post.belongsTo(db.User);
+
 module.exports = db;

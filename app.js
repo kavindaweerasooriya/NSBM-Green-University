@@ -44,3 +44,8 @@ const PORT = 8080;
 app.listen(PORT,function(){
     console.log(`Server started on PORT ${PORT}`)
 })
+
+//TODO :
+//Post has comments
+//Post upvotes
+//Join user and comments with posts

@@ -9,15 +9,20 @@ app.use(express.static(__dirname + './views'));
 
 app.use(express.json());
 
-app.get("/",(req,res)=>{
-    res.render("index")
-})
  
 app.use(cookiesession({
     name:"session",
     maxAge:3600,
     keys:["key"]
 }))
+
+
+app.get("/",require("./middleware/isauth"),(req,res)=>{
+    res.render("index")
+})
+
+
+
 
 
 app.use(require("./routes/user.routes"))

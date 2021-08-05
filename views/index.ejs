@@ -8,7 +8,7 @@
 <h4>Posts</h4>
 
 <main>
-    <% Lol.forEach(post => { %>
+    <% Posts.forEach(post => { %>
          <h1> <%= post.PostTitle %> </h1>
          <a href="/post/read/<%= post.PostId %> "+post.PostId>Read post</a>   
     <%  }); %>

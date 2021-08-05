@@ -28,6 +28,8 @@ const sequelizeconnection = new Sequelize(config.DB, config.USER, config.PASSWOR
 sequelizeconnection.sync()
 
 
-db.User = require("../models/user.model")(sequelizeconnection)
+db.User = require("../models/user.model")(sequelizeconnection);
+db.Post = require('../models/post.model')(sequelizeconnection);
+db.Comment = require("../models/comment.model")(sequelizeconnection);
 
 module.exports = db;

@@ -8,7 +8,7 @@ app.get('/health',(req,res)=>{
     })
 })
 
-app.use(app.set('trust proxy', 1)) // trust first proxy
+app.use(app.set('trust proxy', 1)) 
  
 app.use(cookiesession({
     name:"session",
@@ -17,14 +17,6 @@ app.use(cookiesession({
 
 
 app.use(require("./routes/user.routes"))
-
-
-
-
-
-
-
-
 
 
 

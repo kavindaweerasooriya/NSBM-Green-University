@@ -1,7 +1,78 @@
-<h1>Create post</h1>
+<!-- <h1>Create post</h1>
 <form  method="POST" action="/post/new">
     <input  name="PostTitle" placeholder="Post title"/>
     <input name="PostDescription" placeholder="Post description"/>
     <input type="submit" value="create post"/>
 
 </form>
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+h3.header{
+	text-align: center;
+	font-size: 32px;
+	font-family: arial ffffff;
+	color: #ffffff;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #ffffff;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #3af2c4;
+}
+
+.container {
+  border-radius: 5px;
+  /* background-color: #1999d4; */
+  
+  background-color: #545871;
+
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h3 class="header">Create your post</h3>
+  <form method="POST" action="/post/new" >
+    <label for="title">Your Title</label>
+    <input type="text" id="title" name="PostTitle" placeholder="Title..">
+
+    <label for="discri">Discription</label>
+    <textarea id="discri" name="PostDescription" placeholder="Write Discription..." style="height:200px"></textarea>
+
+    <!-- <label for="image">Picture</label>
+    <input type="file" id="image" name="Photo" style="padding-right: 100%; margin-bottom: 25px; margin-top: 10px; border-radius: 5px 5px;"> -->
+
+    <input type="submit" value="Post">
+  </form>
+</div>
+
+</body>
+</html>

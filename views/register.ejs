@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registration Form In HTML and CSS</title>
+    <title>Register</title>
     <!-- <link rel="stylesheet" href="css/registration design.css"> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -144,20 +144,20 @@
                     <div class="input_grp">
                         <div class="input_wrap">
                             <label for="fname">First Name</label>
-                            <input type="text" name="FirstName" id="fname">
+                            <input type="text" name="FirstName" id="fname" required>
                         </div>
                         <div class="input_wrap">
                             <label for="lname">Last Name</label>
-                            <input type="text" name="LastName" id="lname">
+                            <input type="text" name="LastName" id="lname" required>
                         </div>
                     </div>
                     <div class="input_wrap">
                         <label for="email">Email Address</label>
-                        <input type="text" name="Email" id="email">
+                        <input type="text" name="Email" id="email" required>
                     </div>
                     <div class="input_wrap">
                         <label for="password">Enter a password</label>
-                        <input type="password" name="Password" id="password">
+                        <input type="password" name="Password" id="password" required>
                     </div>
 
                     <!-- <div class="input_wrap">
@@ -187,6 +187,7 @@
                     </div> -->
                     <div class="input_wrap">
                         <input type="submit" value="Register Now" class="submit_btn">
+                        <a href="/user/login">Login here</a>
                     </div>
                 </div>
             </form>

@@ -8,11 +8,13 @@ const { v4: uuidv4 } = require('uuid');
 exports.login = async (req, res)=>{
     const email = req.body.email;
     const password = req.body.password;
+    console.log(req.body);
     if(!email && !password){
         return res.redirect("/user/login")
     }
 
     const user  = await User.findOne({where : {email:email}})
+    console.log(user);
     if(!user){
         return res.redirect("/user/register");
     }

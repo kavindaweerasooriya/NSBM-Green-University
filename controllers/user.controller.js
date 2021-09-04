@@ -53,5 +53,5 @@ exports.getProfile = (req,res)=>{
     console.log("User:::::")
     const user = req.session.user;
     user.Password = ""
-    res.render("profile", user)
+    res.render("profile", {"user":user})
 }

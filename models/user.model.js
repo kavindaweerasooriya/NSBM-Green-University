@@ -16,6 +16,9 @@ module.exports = (sequelizeconn)=>{
         LastName :{
             type : DataTypes.STRING,
         },
+        Bio: {
+            type:DataTypes.STRING,
+        },
         Password :{
             type: DataTypes.STRING
         }

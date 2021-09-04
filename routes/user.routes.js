@@ -6,7 +6,7 @@ const userctrl = require("../controllers/user.controller")
 //view
 router.get("/user/login",userctrl.getLogin)
 router.get("/user/register",userctrl.getRegister);
-router.get("/user/profile",userctrl.getProfile)
+router.get("/user/profile", require("../middleware/isauth"),userctrl.getProfile)
 
 router.post("/user/login",userctrl.login)
 router.post("/user/register",require("../middleware/passwordtohash"),userctrl.register)

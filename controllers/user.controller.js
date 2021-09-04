@@ -1,9 +1,6 @@
 const User = require("../db/db").User
 const argon2 = require('argon2');
-
 const { v4: uuidv4 } = require('uuid');
-
-
 
 exports.login = async (req, res)=>{
     const email = req.body.email;
@@ -14,7 +11,6 @@ exports.login = async (req, res)=>{
     }
 
     const user  = await User.findOne({where : {email:email}})
-    console.log(user);
     if(!user){
         return res.redirect("/user/register");
     }
@@ -51,4 +47,10 @@ exports.getLogin = (req, res)=>{
 
 exports.getRegister = (req, res)=>{
     res.render("register");
+}
+
+exports.getProfile = (req,res)=>{
+    console.log("User:::::")
+    console.log(req.session.user)
+    res.render("profile")
 }

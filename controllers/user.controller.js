@@ -19,8 +19,7 @@ exports.login = async (req, res)=>{
         req.session.user = user;
         return res.redirect("/")
     }
-
-    return res.redirect("/user/login")
+    return res.redirect("/user/login",{"error":true})
 }
 
 
@@ -50,7 +49,6 @@ exports.getRegister = (req, res)=>{
 }
 
 exports.getProfile = (req,res)=>{
-    console.log("User:::::")
     const user = req.session.user;
     user.Password = ""
     res.render("profile", {"user":user})

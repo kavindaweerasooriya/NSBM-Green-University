@@ -51,6 +51,7 @@ exports.getRegister = (req, res)=>{
 
 exports.getProfile = (req,res)=>{
     console.log("User:::::")
-    console.log(req.session.user)
-    res.render("profile")
+    const user = req.session.user;
+    user.Password = ""
+    res.render("profile", user)
 }
